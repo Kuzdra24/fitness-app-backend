@@ -1,9 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const homepage = require("../controllers/homepage");
-const about = require("../controllers/about");
+const workoutAction = require("../controllers/workouts");
 
-router.get("/", homepage);
-router.get("/about", about);
+router.get("/workouts", workoutAction.getAllWorkout);
+
+// router.get("/workouts/:id", getWorkout);
+
+//Adding new exercisie into priticular workout 
+router.put("/workouts/:id", workoutAction.updateWorkout)
+
+router.post("/workouts", workoutAction.saveWorkout);
+
+// router.delete("/workouts", deleteWorkout);
 
 module.exports = router;
