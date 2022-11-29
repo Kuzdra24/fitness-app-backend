@@ -52,7 +52,7 @@ const deleteExercise = async (req, res) => {
 const deleteWorkout = async (req, res) => {
   const id = req.params.id;
   await Workout.deleteOne({ _id: id });
-  res.status(204).send("usuniete bro");
+  res.status(204).send("deleted");
 };
 
 module.exports = {
